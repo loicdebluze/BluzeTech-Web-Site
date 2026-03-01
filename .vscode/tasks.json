@@ -1,0 +1,12 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Update index project image",
+			"type": "shell",
+			"command": "powershell -Command \"(Get-Content index.html) -replace '<div class=\"project-image\" style=\"background-color: rgba\\(30, 64, 175, 0.1\\);\"></div>','<div class=\"project-image\" style=\"background-image: url(\\'Image/Projet 1.png\\'); background-size: cover; background-position: center;\"></div>' | Set-Content index.html\"",
+			"args": [],
+			"isBackground": false
+		}
+	]
+}

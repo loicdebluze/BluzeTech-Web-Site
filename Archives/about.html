@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>À propos — BluzeTech</title>
+  <meta name="description" content="À propos de BluzeTech : fondateur, localisation, mission." />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="site-header-inner">
+      <a class="brand" href="index.html"><img src="Image/Icon.png" alt="BluzeTech logo" class="brand-logo"/> BluzeTech</a>
+      <nav class="nav">
+        <a href="index.html">Accueil</a>
+        <a href="services.html">Services</a>
+        <a href="projets.html">Projets</a>
+        <a class="active" href="about.html">À propos</a>
+        <a class="btn btn-primary" href="contact.html">Contactez-nous</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="content">
+    <h1>À propos</h1>
+    <section class="bio">
+      <div>
+        <h2>La compagnie</h2>
+        <p><strong>BluzeTech</strong> est une entreprise spécialisée en matériaux composites,
+        basée à <strong>Québec (QC)</strong>. Nous combinons rigueur technique et finitions
+        soignées pour offrir des réparations fiables et durables.</p>
+      </div>
+      <div>
+        <h2>Fondateur</h2>
+        <p><strong>Loïc De Bluze</strong> — passionné de technologie et de cyclisme, avec une
+        expérience pratique des procédés composites (stratification, réparation, finition) et un
+        intérêt pour les applications sportives.</p>
+      </div>
+      <div>
+        <h2>Mission</h2>
+        <p>Rendre la réparation composite accessible, transparente et sécuritaire, en prolongeant
+        la durée de vie des équipements et en réduisant le gaspillage.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer site-footer-split">
+    <p>© <span id="year"></span> BluzeTech</p>
+    <a href="../conditions-legales.html">Conditions légales</a>
+  </footer>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>

@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Projets — BluzeTech</title>
+  <meta name="description" content="Découvrez nos projets de réparation et fabrication en matériaux composites. Cadres carbone, pièces sur mesure, solutions innovantes." />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="projets-page">
+  <header class="site-header">
+    <div class="site-header-inner">
+      <a class="brand" href="index.html"><img src="Image/Icon.png" alt="BluzeTech logo" class="brand-logo"/> BluzeTech</a>
+      <nav class="nav">
+        <a href="index.html">Accueil</a>
+        <a href="services.html">Services</a>
+        <a class="active" href="projets.html">Projets</a>
+        <a href="about.html">À propos</a>
+        <a class="btn btn-primary" href="contact.html">Contactez-nous</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="content">
+    <!-- Titre simple sans bannière -->
+    <h1 class="page-title">Nos Réalisations</h1>
+    <!-- Section: Grille de projets -->
+    <section class="projects-showcase">
+      <div class="projects-grid-full">
+               <!-- Projet 4 -->
+        <article class="project-showcase">
+          <div class="project-gallery">
+            <div class="gallery-container">
+              <img src="Image/projet-4c.png" alt="Diagnostic et restauration - Photo 1" class="gallery-image" />
+              <img src="Image/projet-4.jpg" alt="Diagnostic et restauration - Photo 2" class="gallery-image" style="display:none;" />
+              <img src="Image/projet-4b.jpg" alt="Diagnostic et restauration - Photo 3" class="gallery-image" style="display:none;" />
+            </div>
+            <button class="gallery-prev" onclick="changeImage(this, -1)">❮</button>
+            <button class="gallery-next" onclick="changeImage(this, 1)">❯</button>
+            <div class="gallery-dots">
+              <span class="dot active" onclick="currentImage(this)"></span>
+              <span class="dot" onclick="currentImage(this)"></span>
+              <span class="dot" onclick="currentImage(this)"></span>
+            </div>
+          </div>
+          <div class="project-showcase-content">
+            <h2>Réparation du triangle arrière - Fatbike double suspension </h2>
+            <p class="project-description">
+              La zone endommagée a été retirée et la stratification a été refaite avec des fibres de carbone, 
+              selon les spécifications aérospatiales. La pièce, une fois repeinte, est prête pour une nouvelle vie 
+              sur les sentiers.
+            </p>
+            <div class="project-highlights">
+              <span class="highlight">✓ Fatbike</span>
+              <span class="highlight">✓ Système de mise sous vide</span>
+            </div>
+            <p class="project-result">
+          </div>
+        </article>
+
+        <!-- Projet 3 -->
+        <article class="project-showcase">
+          <div class="project-gallery">
+            <div class="gallery-container">
+              <img src="Image/projet-2.png" alt="Fabrication pièce composite - Photo 1" class="gallery-image" />
+              <img src="Image/projet-2b.jpg" alt="Fabrication pièce composite - Photo 2" class="gallery-image" style="display:none;" />
+              <img src="Image/projet-2c.jpg" alt="Fabrication pièce composite - Photo 3" class="gallery-image" style="display:none;" />
+              <img src="Image/projet-2d.png" alt="Fabrication pièce composite - Photo 4" class="gallery-image" style="display:none;" />
+            </div>
+            <button class="gallery-prev" onclick="changeImage(this, -1)">❮</button>
+            <button class="gallery-next" onclick="changeImage(this, 1)">❯</button>
+            <div class="gallery-dots">
+              <span class="dot active" onclick="currentImage(this)"></span>
+              <span class="dot" onclick="currentImage(this)"></span>
+              <span class="dot" onclick="currentImage(this)"></span>
+              <span class="dot" onclick="currentImage(this)"></span>
+            </div>
+          </div>
+          <div class="project-showcase-content">
+            <h2>Réparation Cadre de Vélo de Route - Giant Defy</h2>
+            <p class="project-description">
+              Suite à un impact avec le dérailleur, le tube arrière fut complètement brisé. Une patch structurel en fibre de carbone
+              à été appliqué pour restaurer l'intégrité du cadre. Une résine de grade aéronautique à été utilisée et cuite sous une couverture chauffante
+              pour garantir une résistance optimale. Cette réparation à permis de redonner une seconde vie à ce vélo de route. 
+            </p>
+            <div class="project-highlights">
+              <span class="highlight">✓ Réparation structurelle</span>
+              <span class="highlight">✓ Matériaux grade aéronautique</span>
+            </div>
+            <p class="project-result">
+        </article>
+
+        <!-- Projet 2 -->
+        <article class="project-showcase">
+          <div class="project-gallery">
+            <div class="gallery-container">
+              <img src="Image/projet-3.jpg" alt="Diagnostic et restauration - Photo 1" class="gallery-image" />
+              <img src="Image/projet-3b.jpg" alt="Diagnostic et restauration - Photo 2" class="gallery-image" style="display:none;" />
+              <img src="Image/projet-3c.jpg" alt="Diagnostic et restauration - Photo 3" class="gallery-image" style="display:none;" />
+            </div>
+            <button class="gallery-prev" onclick="changeImage(this, -1)">❮</button>
+            <button class="gallery-next" onclick="changeImage(this, 1)">❯</button>
+            <div class="gallery-dots">
+              <span class="dot active" onclick="currentImage(this)"></span>
+              <span class="dot" onclick="currentImage(this)"></span>
+              <span class="dot" onclick="currentImage(this)"></span>
+            </div>
+          </div>
+          <div class="project-showcase-content">
+            <h2>Réparation Cadre de Vélo de Route - Argon 18 Krypton</h2>
+            <p class="project-description">
+              Cadre de très haute qualité endommagé lors du transpot en avion. Le haubans arrière droite présentait une fissure sur la moitié de l'épaisseur.
+              La zone endommagée a été retiré et la stratification à été refaite avec des fibres de carbone et une résine époxy haute performance.
+            </p>
+            <div class="project-highlights">
+              <span class="highlight">✓ Finition prépeinture</span>
+              <span class="highlight">✓ Système de mise sous vide</span>
+            </div>
+            <p class="project-result">
+          </div>
+        </article>
+
+        <!-- Projet 1 -->
+        <article class="project-showcase">
+          <div class="project-gallery">
+            <div class="gallery-container">
+              <img src="Image/Avant-Apres.png" alt="Réparation cadre vélo - Photo 1" class="gallery-image" />
+              <img src="Image/projet-1b.jpg" alt="Réparation cadre vélo - Photo 2" class="gallery-image" style="display:none;" />
+              <img src="Image/projet-1c.jpg" alt="Réparation cadre vélo - Photo 3" class="gallery-image" style="display:none;" />
+            </div>
+            <button class="gallery-prev" onclick="changeImage(this, -1)">❮</button>
+            <button class="gallery-next" onclick="changeImage(this, 1)">❯</button>
+            <div class="gallery-dots">
+              <span class="dot active" onclick="currentImage(this)"></span>
+              <span class="dot" onclick="currentImage(this)"></span>
+              <span class="dot" onclick="currentImage(this)"></span>
+            </div>
+          </div>
+          <div class="project-showcase-content">
+            <h2>Réparation Cadre Vélo de Montagne - Devinci </h2>
+            <p class="project-description">
+              Réparation d'un cadre de vélo en carbone ayant subi un impact latéral avec une roche. 
+              La fibre de carbone présentait une délamination sur le jeu de direction.
+              La zone endommagée à été retiré et la stratification a été refaite avec des fibres 
+              de carbone et une résine époxy haute performance. 
+            </p>
+            <div class="project-highlights">
+              <span class="highlight">✓ Réparation structurelle</span>
+              <span class="highlight">✓ Stratification carbone</span>
+            </div>
+            <p class="project-result">
+        </article>
+      </div>
+    </section>
+
+    <!-- Section: Appel à l'action -->
+    <section class="contact-promo">
+      <h2>Vous avez un projet composite en tête ?</h2>
+      <p>Contactez-nous pour discuter de votre projet et obtenir un devis personnalisé.</p>
+      <a href="contact.html" class="btn btn-primary">Discutons de votre projet</a>
+    </section>
+  </main>
+
+  <footer class="site-footer site-footer-split">
+    <div class="footer-content">
+      <p>&copy; 2024 BluzeTech. Tous droits réservés.</p>
+      <nav class="footer-nav">
+        <a href="index.html">Accueil</a> • 
+        <a href="services.html">Services</a> • 
+        <a href="projets.html">Projets</a> • 
+        <a href="about.html">À propos</a> • 
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+    <a href="conditions-legales.html">Conditions légales</a>
+  </footer>
+
+  <script>
+    function changeImage(button, n) {
+      const gallery = button.closest('.project-gallery');
+      const images = gallery.querySelectorAll('.gallery-image');
+      const dots = gallery.querySelectorAll('.dot');
+      let currentIndex = Array.from(images).findIndex(img => img.style.display !== 'none');
+      
+      currentIndex += n;
+      if (currentIndex >= images.length) currentIndex = 0;
+      if (currentIndex < 0) currentIndex = images.length - 1;
+      
+      images.forEach((img, idx) => {
+        img.style.display = idx === currentIndex ? 'block' : 'none';
+      });
+      
+      dots.forEach((dot, idx) => {
+        dot.classList.toggle('active', idx === currentIndex);
+      });
+    }
+    
+    function currentImage(dot) {
+      const gallery = dot.closest('.project-gallery');
+      const images = gallery.querySelectorAll('.gallery-image');
+      const dots = gallery.querySelectorAll('.dot');
+      const index = Array.from(dots).indexOf(dot);
+      
+      images.forEach((img, idx) => {
+        img.style.display = idx === index ? 'block' : 'none';
+      });
+      
+      dots.forEach((d, idx) => {
+        d.classList.toggle('active', idx === index);
+      });
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contact — BluzeTech</title>
+  <meta name="description" content="Contact BluzeTech — demande de devis ou diagnostic." />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="site-header-inner">
+      <a class="brand" href="index.html"><img src="Image/Icon.png" alt="BluzeTech logo" class="brand-logo"/> BluzeTech</a>
+      <nav class="nav">
+        <a href="index.html">Accueil</a>
+        <a href="services.html">Services</a>
+        <a href="projets.html">Projets</a>
+        <a href="about.html">À propos</a>
+        <a class="btn btn-primary active" href="contact.html">Contactez-nous</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="content">
+    <h1>Contact</h1>
+    <p>Pour une réparation ou un devis, envoyez‑nous un message avec quelques photos
+    et la localisation de l’éventuel dommage.</p>
+
+    <section class="contact-details" aria-label="Coordonnées">
+      <h2>Nos coordonnées</h2>
+      <ul>
+        <li><span class="contact-icon" aria-hidden="true">📞</span> <strong>Téléphone&nbsp;:</strong> <a href="tel:+15813058601">(581) 305 8601</a></li>
+        <li><span class="contact-icon" aria-hidden="true">✉️</span> <strong>Courriel&nbsp;:</strong> <a href="mailto:loicdebluze@bluzetech.com">loicdebluze@bluzetech.com</a></li>
+        <li><span class="contact-icon" aria-hidden="true">📍</span> <strong>Emplacement&nbsp;:</strong> Québec et alentours</li>
+      </ul>
+    </section>
+
+    <!-- Remplace l'email ci-dessous par le tien -->
+    <p><a class="btn btn-primary btn-lg" href="mailto:loicdebluze@bluzetech.com?subject=Demande%20de%20devis%20—%20BluzeTech">Contactez‑nous par e‑mail</a></p>
+
+    <h2>Informations utiles à inclure</h2>
+    <ul>
+      <li>Modèle du vélo</li>
+      <li>Zone endommagée (tube, bases, haubans, etc.)</li>
+      <li>Photos nettes (proche + vue d’ensemble)</li>
+      <li>Contexte (impact, chute, fissure apparue progressivement)</li>
+    </ul>
+
+    <section class="contact-map-card" aria-label="Carte de localisation">
+      <h2>Basés à Québec</h2>
+      <p><span class="contact-icon" aria-hidden="true">📍</span> Nous nous déplaçons partout dans la province de Québec.</p>
+      <div class="contact-map-wrap">
+        <iframe
+          class="contact-map"
+          title="Carte de Québec"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          src="https://www.openstreetmap.org/export/embed.html?bbox=-75.8%2C44.5%2C-69.0%2C49.8&amp;layer=mapnik&amp;marker=46.8139%2C-71.2082"></iframe>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer site-footer-split">
+    <p>© <span id="year"></span> BluzeTech</p>
+    <a href="conditions-legales.html">Conditions légales</a>
+  </footer>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
+``
