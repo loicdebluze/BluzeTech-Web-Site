@@ -1339,7 +1339,7 @@ a:hover{text-decoration:underline}
 
 .site-footer-split{
   display:flex;
-  align-items:center;
+  align-items:flex-start;
   justify-content:space-between;
   gap:12px;
 }
@@ -1348,9 +1348,28 @@ a:hover{text-decoration:underline}
   white-space:nowrap;
 }
 
+.footer-content{
+  display:flex;
+  flex-direction:column;
+  gap:6px;
+}
+
+.footer-nav{
+  display:flex;
+  flex-wrap:wrap;
+  align-items:center;
+  gap:0;
+}
+
+.footer-nav a{
+  white-space:nowrap;
+}
+
 /* MOBILE */
 @media (max-width:640px){
   .nav{gap:8px}
   .btn{padding:9px 12px}
   .hero{padding:24px}
+  .site-footer-split{display:block}
+  .footer-content{gap:8px}
 }

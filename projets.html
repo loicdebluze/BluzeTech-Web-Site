@@ -163,16 +163,16 @@
 
   <footer class="site-footer site-footer-split">
     <div class="footer-content">
-      <p>&copy; 2024 BluzeTech. Tous droits réservés.</p>
+      <p>© <span id="year"></span> BluzeTech | Matériaux composites</p>
       <nav class="footer-nav">
         <a href="index.html">Accueil</a> • 
         <a href="services.html">Services</a> • 
         <a href="projets.html">Projets</a> • 
         <a href="about.html">À propos</a> • 
-        <a href="contact.html">Contact</a>
+        <a href="contact.html">Contact</a> • 
+        <a href="conditions-legales.html">Conditions légales</a>
       </nav>
     </div>
-    <a href="conditions-legales.html">Conditions légales</a>
   </footer>
 
   <script>
@@ -209,6 +209,8 @@
         d.classList.toggle('active', idx === index);
       });
     }
+
+    document.getElementById('year').textContent = new Date().getFullYear();
   </script>
 </body>
 </html>
