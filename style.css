@@ -248,7 +248,7 @@ a:hover{text-decoration:underline}
   min-height:100vh;
   min-height:100svh;
   margin:0;
-  background: linear-gradient(135deg, var(--bg) 0%, rgba(30,64,175,0.25) 45%, rgba(26,140,255,0.16) 100%);
+  background:#000;
 }
 
 .hero-banner::before{
@@ -268,6 +268,21 @@ a:hover{text-decoration:underline}
   object-fit:cover;
   z-index:0;
   pointer-events:none;
+}
+
+.home-page .hero-banner-video .hero-banner-bg-video{
+  opacity:0;
+  transition:opacity 900ms ease-out;
+}
+
+.home-page .hero-banner-video .hero-banner-bg-video.is-ready{
+  opacity:1;
+}
+
+@media (prefers-reduced-motion: reduce){
+  .home-page .hero-banner-video .hero-banner-bg-video{
+    transition:none;
+  }
 }
 
 .home-page .hero-banner.hero-banner-video::before{

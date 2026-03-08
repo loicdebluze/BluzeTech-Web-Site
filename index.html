@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>BluzeTech | Matériaux composites</title>
   <meta name="description" content="BluzeTech — Spécialiste des matériaux composites : réparation de cadres de vélo en carbone et services avancés. Québec, QC." />
+  <link rel="preload" href="Image/BluzeTech_WebSite_Intro.webm" as="video" type="video/webm" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body class="home-page">
@@ -22,7 +23,7 @@
   </header>
 
   <section class="hero-banner hero-banner-video" aria-label="Bannière d'accueil">
-    <video class="hero-banner-bg-video" autoplay muted loop playsinline preload="metadata" poster="Image/fond_bike1.jpg" aria-hidden="true">
+    <video class="hero-banner-bg-video" autoplay muted loop playsinline preload="auto" aria-hidden="true">
       <source src="Image/BluzeTech_WebSite_Intro.webm" type="video/webm" />
       <source src="Image/BluzeTech_WebSite_Intro.mp4" type="video/mp4" />
       Votre navigateur ne supporte pas la lecture video HTML5.
@@ -138,6 +139,22 @@
     document.getElementById('year').textContent = new Date().getFullYear();
 
     const siteHeader = document.querySelector('.site-header');
+    const heroVideo = document.querySelector('.hero-banner-bg-video');
+
+    const revealHeroVideo = () => {
+      if (!heroVideo) return;
+      requestAnimationFrame(() => heroVideo.classList.add('is-ready'));
+    };
+
+    if (heroVideo) {
+      if (heroVideo.readyState >= 2) {
+        revealHeroVideo();
+      } else {
+        heroVideo.addEventListener('loadeddata', revealHeroVideo, { once: true });
+        heroVideo.addEventListener('canplay', revealHeroVideo, { once: true });
+      }
+    }
+
     const setHeaderState = () => {
       if (!siteHeader) return;
       siteHeader.classList.toggle('scrolled', window.scrollY > 32);
