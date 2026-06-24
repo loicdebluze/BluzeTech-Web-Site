@@ -22,46 +22,89 @@
   </header>
 
   <main class="content">
-    <h1>Nos services</h1>
+    <section class="services-intro">
+      <h1 class="page-title">Nos services</h1>
+      <p class="lead">BluzeTech est spécialisé en réparation et fabrication de pièces composites.</p>
+    </section>
 
-    <article class="service-item1">
-      <h2><a href="service-reparation-velo-carbone.html">Réparation de cadres de vélo en carbone</a></h2>
-      <p>Diagnostic structural, réparation structurelle, finition et contrôle qualité.</p>
-      <a class="btn btn-secondary" href="service-reparation-velo-carbone.html">Détails</a>
-    </article>
+    <div class="services-cards-grid">
 
-    <article class="service-item2">
-      <h2><a href="service-prototypage-petite-fabrication.html">Prototype & petite fabrication</a></h2>
-      <p>Fabrication sur mesure de pièces en matériaux composites, prototypes et petites séries.</p>
-      <a class="btn btn-secondary" href="service-prototypage-petite-fabrication.html">Détails</a>
-    </article>
+      <article class="service-card-v2">
+        <div class="service-photo service-photo-bike"></div>
+        <div class="service-card-body">
+          <h2><a href="service-reparation-velo-carbone.html">Réparation de cadres de vélo en carbone</a></h2>
+          <p>Diagnostic structural, réparation structurelle, finition et contrôle qualité.</p>
+          <a class="btn btn-secondary" href="service-reparation-velo-carbone.html">Découvrir →</a>
+        </div>
+      </article>
 
-    <article class="service-item3">
-      <h2>Réparation d'équipement de sport en composite</h2>
-      <p>Réparation d'équipement de sport en matériaux composites (bâton, raquettes, bateaux, etc.).</p>
-      <span class="btn btn-secondary" aria-disabled="true">Détails (à venir)</span>
-    </article>
+      <article class="service-card-v2">
+        <div class="service-photo service-photo-fabrication"></div>
+        <div class="service-card-body">
+          <h2><a href="service-prototypage-petite-fabrication.html">Prototype &amp; petite fabrication</a></h2>
+          <p>Fabrication sur mesure de pièces en matériaux composites, prototypes et petites séries.</p>
+          <a class="btn btn-secondary" href="service-prototypage-petite-fabrication.html">Découvrir →</a>
+        </div>
+      </article>
+<!--
+      <article class="service-card-v2">
+        <div class="service-photo service-photo-sport"></div>
+        <div class="service-card-body">
+          <h2>Réparation d'équipement de sport en composite</h2>
+          <p>Réparation d'équipement de sport en matériaux composites (bâton, raquettes, bateaux, etc.).</p>
+          <span class="btn btn-secondary" aria-disabled="true">Détails (à venir)</span>
+        </div>
+      </article>
+-->
+      <article class="service-card-v2">
+        <div class="service-photo service-photo-voiture"></div>
+        <div class="service-card-body">
+          <h2><a href="prestige-vehicules-react/index.html">Véhicules de prestige</a></h2>
+          <p>Réparation de pièces composites endommagées et fabrication sur mesure pour véhicules de prestige.</p>
+          <a class="btn btn-secondary" href="prestige-vehicules-react/index.html">Découvrir →</a>
+        </div>
+      </article>
 
-    <article class="service-item4">
-      <h2>Réparation de pièces de voiture en composite</h2>
-      <p>Réparation de pièces de voiture en matériaux composites.</p>
-      <span class="btn btn-secondary" aria-disabled="true">Détails (à venir)</span>
-    </article>
+    </div>
+
+    <section class="contact-promo">
+      <h2>Un projet composite en tête ?</h2>
+      <p>Contactez-nous pour discuter de votre projet et obtenir un devis personnalisé.</p>
+      <a href="contact.html" class="btn btn-primary">Discutons de votre projet</a>
+    </section>
   </main>
 
   <footer class="site-footer site-footer-split">
     <div class="footer-content">
       <p>© <span id="year"></span> BluzeTech | Matériaux composites</p>
       <nav class="footer-nav">
-        <a href="index.html">Accueil</a> • 
-        <a href="services.html">Services</a> • 
-        <a href="projets.html">Projets</a> • 
-        <a href="about.html">À propos</a> • 
+        <a href="index.html">Accueil</a> •
+        <a href="services.html">Services</a> •
+        <a href="projets.html">Projets</a> •
+        <a href="about.html">À propos</a> •
         <a href="contact.html">Contact</a>
       </nav>
     </div>
     <a href="conditions-legales.html">Conditions légales</a>
   </footer>
-  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    if ('IntersectionObserver' in window) {
+      const cards = document.querySelectorAll('.service-card-v2');
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.15 });
+      cards.forEach((card) => observer.observe(card));
+    } else {
+      document.querySelectorAll('.service-card-v2').forEach((card) => card.classList.add('is-visible'));
+    }
+  </script>
 </body>
 </html>

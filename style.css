@@ -841,20 +841,38 @@ a:hover{text-decoration:underline}
 .service-velo-page .content > ol,
 .service-velo-page .repair-examples,
 .service-velo-page .service-more,
-.service-velo-page .cta-row-center{
+.service-velo-page .cta-row-center,
+.service-prestige-page .content > h1,
+.service-prestige-page .service-slogan,
+.service-prestige-page .content > .lead,
+.service-prestige-page .content > h2,
+.service-prestige-page .content > ul,
+.service-prestige-page .content > ol,
+.service-prestige-page .repair-examples,
+.service-prestige-page .service-more,
+.service-prestige-page .cta-row-center{
   opacity:0;
   animation:fadeUpSoft 0.7s ease-out forwards;
 }
 
-.service-velo-page .content > h1{animation-delay:0.03s;}
-.service-velo-page .service-slogan{animation-delay:0.11s;}
-.service-velo-page .content > .lead{animation-delay:0.18s;}
-.service-velo-page .content > h2{animation-delay:0.24s;}
+.service-velo-page .content > h1,
+.service-prestige-page .content > h1{animation-delay:0.03s;}
+.service-velo-page .service-slogan,
+.service-prestige-page .service-slogan{animation-delay:0.11s;}
+.service-velo-page .content > .lead,
+.service-prestige-page .content > .lead{animation-delay:0.18s;}
+.service-velo-page .content > h2,
+.service-prestige-page .content > h2{animation-delay:0.24s;}
 .service-velo-page .content > ul,
-.service-velo-page .content > ol{animation-delay:0.3s;}
-.service-velo-page .repair-examples{animation-delay:0.38s;}
-.service-velo-page .service-more{animation-delay:0.48s;}
-.service-velo-page .cta-row-center{animation-delay:0.56s;}
+.service-velo-page .content > ol,
+.service-prestige-page .content > ul,
+.service-prestige-page .content > ol{animation-delay:0.3s;}
+.service-velo-page .repair-examples,
+.service-prestige-page .repair-examples{animation-delay:0.38s;}
+.service-velo-page .service-more,
+.service-prestige-page .service-more{animation-delay:0.48s;}
+.service-velo-page .cta-row-center,
+.service-prestige-page .cta-row-center{animation-delay:0.56s;}
 
 @keyframes fadeUpSoft{
   from{
@@ -1010,88 +1028,120 @@ a:hover{text-decoration:underline}
   padding-left:18px;
 }
 
-.service-item1{
-  background-image : url('Image/fond_bike1.jpg');
-  background-size: cover;
-  background-position: center 40%;
-  background-repeat: no-repeat;
-  border:1px solid #223353;
-  padding:50px;
+/* Page Services — intro */
+.services-page .services-intro{
+  margin:32px 0 8px;
+}
+
+.services-page .services-intro .lead{
+  max-width:700px;
+}
+
+/* Page Services — grille de cartes (photo en haut, contenu sur fond plein en bas) */
+.services-page .services-cards-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(280px, 1fr));
+  gap:24px;
+  margin:32px 0 56px;
+}
+
+.services-page .service-card-v2{
+  background:var(--card);
+  border:1px solid var(--border);
   border-radius:var(--radius);
-  margin:16px 0;
-  box-shadow:var(--shadow);
-  transition:var(--transition);
-}
-
-.service-item2{
-    background-image : url('Image/fond_fabrication.jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  border:1px solid #223353;
-  padding:50px;
-  border-radius:var(--radius);
-  margin:16px 0;
-  box-shadow:var(--shadow);
-  transition:var(--transition);
-}
-
-.service-item3{
-  background-image : url('Image/fond_hockey.jpg');
-  background-size: cover;
-  background-position: center 65%;
-  background-repeat: no-repeat;
-  border:1px solid #223353;
-  padding:50px;
-  border-radius:var(--radius);
-  margin:16px 0;
-  box-shadow:var(--shadow);
-  transition:var(--transition);
-}
-
-.service-item4{
-  background-image : url('Image/fond_voiture.jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  border:1px solid #223353;
-  padding:50px;
-  border-radius:var(--radius);
-  margin:16px 0;
-  box-shadow:var(--shadow);
-  transition:var(--transition);
-}
-
-
-.service-item:hover{
-  transform:translateY(-3px);
-  border-color:#2f4a7a;
-}
-
-.services-page .service-item1,
-.services-page .service-item2,
-.services-page .service-item3,
-.services-page .service-item4{
+  overflow:hidden;
+  box-shadow:0 2px 8px rgba(0,0,0,0.1);
+  display:flex;
+  flex-direction:column;
   opacity:0;
-  animation-duration:0.9s;
-  animation-timing-function:ease-out;
-  animation-fill-mode:forwards;
+  transform:translateY(24px);
+  transition:opacity 0.6s ease-out, transform 0.6s ease-out;
 }
 
-.services-page .service-item1,
-.services-page .service-item3{
-  animation-name:slideInFromLeft;
+.services-page .service-card-v2.is-visible{
+  opacity:1;
+  transform:translateY(0);
 }
 
-.services-page .service-item2,
-.services-page .service-item4{
-  animation-name:slideInFromRight;
+.services-page .service-card-v2:hover{
+  transform:translateY(-4px);
+  border-color:var(--accent);
+  box-shadow:0 10px 24px rgba(30,64,175,0.18);
 }
 
-.services-page .service-item1{animation-delay:0.05s;}
-.services-page .service-item2{animation-delay:0.2s;}
-.services-page .service-item3{animation-delay:0.35s;}
-.services-page .service-item4{animation-delay:0.5s;}
+.services-page .service-photo{
+  height:200px;
+  background-size:cover;
+  background-repeat:no-repeat;
+}
+
+.services-page .service-photo-bike{
+  background-image:url('Image/fond_bike1.jpg');
+  background-position:center 40%;
+}
+
+.services-page .service-photo-fabrication{
+  background-image:url('Image/fond_fabrication.jpg');
+  background-position:center;
+}
+
+.services-page .service-photo-sport{
+  background-image:url('Image/fond_hockey.jpg');
+  background-position:center 65%;
+}
+
+.services-page .service-photo-voiture{
+  background-image:url('Image/fond_voiture.jpg');
+  background-position:center;
+}
+
+.services-page .service-card-body{
+  padding:18px 20px 22px;
+  display:flex;
+  flex-direction:column;
+  flex:1;
+}
+
+.services-page .service-card-body h2{
+  font-size:1.1rem;
+  margin:0 0 8px;
+  line-height:1.35;
+  color:var(--text);
+}
+
+.services-page .service-card-body h2 a{
+  color:var(--text);
+  text-decoration:none;
+}
+
+.services-page .service-card-body h2 a:hover{
+  text-decoration:underline;
+}
+
+.services-page .service-card-body p{
+  color:var(--muted);
+  font-size:0.92rem;
+  line-height:1.6;
+  margin:0 0 16px;
+  flex:1;
+}
+
+.services-page .service-card-body .btn{
+  align-self:flex-start;
+}
+
+.services-page .service-card-body span.btn[aria-disabled="true"]{
+  opacity:0.55;
+  cursor:not-allowed;
+}
+
+@media (prefers-reduced-motion: reduce){
+  .services-page .service-card-v2{
+    opacity:1;
+    transform:none;
+    transition:none;
+  }
+}
 
 @keyframes slideInFromLeft{
   from{
@@ -1116,10 +1166,6 @@ a:hover{text-decoration:underline}
 }
 
 @media (prefers-reduced-motion: reduce){
-  .services-page .service-item1,
-  .services-page .service-item2,
-  .services-page .service-item3,
-  .services-page .service-item4,
   .projets-page .project-showcase,
   .service-velo-page .content > h1,
   .service-velo-page .service-slogan,
@@ -1129,7 +1175,16 @@ a:hover{text-decoration:underline}
   .service-velo-page .content > ol,
   .service-velo-page .repair-examples,
   .service-velo-page .service-more,
-  .service-velo-page .cta-row-center{
+  .service-velo-page .cta-row-center,
+  .service-prestige-page .content > h1,
+  .service-prestige-page .service-slogan,
+  .service-prestige-page .content > .lead,
+  .service-prestige-page .content > h2,
+  .service-prestige-page .content > ul,
+  .service-prestige-page .content > ol,
+  .service-prestige-page .repair-examples,
+  .service-prestige-page .service-more,
+  .service-prestige-page .cta-row-center{
     animation:none;
     opacity:1;
     transform:none;
@@ -1526,4 +1581,354 @@ a:hover{text-decoration:underline}
   .hero{padding:24px}
   .site-footer-split{display:block}
   .footer-content{gap:8px}
+}
+
+/* SERVICE PRESTIGE */
+.service-eyebrow {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--accent);
+  background: rgba(26,140,255,0.12);
+  display: inline-block;
+  padding: 0.3rem 0.85rem;
+  border-radius: 20px;
+  border: 1px solid rgba(26,140,255,0.2);
+  margin-bottom: 1.25rem;
+}
+
+.prestige-banner {
+  background: linear-gradient(135deg, var(--bg) 0%, rgba(30,64,175,0.25) 45%, rgba(255,107,95,0.10) 100%);
+}
+
+.prestige-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.prestige-stat {
+  padding: 2rem 1.5rem;
+  border-right: 1px solid var(--border);
+  background: var(--panel);
+  text-align: center;
+}
+
+.prestige-stat:last-child {
+  border-right: none;
+}
+
+.prestige-stat-num {
+  font-family: 'Trebuchet MS', 'Trebuchet', Arial, sans-serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--accent);
+  line-height: 1;
+}
+
+.prestige-stat-label {
+  font-size: 0.8rem;
+  color: var(--muted);
+  margin-top: 0.4rem;
+  line-height: 1.5;
+}
+
+@media (max-width: 640px) {
+  .prestige-stats {
+    grid-template-columns: 1fr;
+  }
+  .prestige-stat {
+    border-right: none;
+    border-bottom: 1px solid var(--border);
+  }
+}
+
+/* Prestige – layout split */
+.prestige-split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+.prestige-split-reverse .prestige-split-image {
+  order: -1;
+}
+
+.prestige-img-placeholder {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  aspect-ratio: 4 / 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  color: var(--border);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+/* Prestige – section label */
+.prestige-section-label {
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+/* Prestige – highlights (réutilise .highlight existant) */
+.prestige-highlights {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-top: 1.5rem;
+}
+
+/* Prestige – quote */
+.prestige-quote {
+  background: rgba(30,64,175,0.1);
+  border-left: 3px solid var(--accent);
+  padding: 1.25rem 1.75rem;
+  border-radius: 0 8px 8px 0;
+  margin: 0 0 3rem;
+  font-style: italic;
+  color: var(--text);
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+
+/* Prestige – services grid */
+.prestige-services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.prestige-service-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+}
+
+.prestige-service-icon {
+  width: 38px;
+  height: 38px;
+  background: rgba(26,140,255,0.12);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+  font-size: 18px;
+}
+
+.prestige-service-card h3 {
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin: 0 0 0.5rem;
+  color: var(--text);
+}
+
+.prestige-service-card p {
+  font-size: 0.875rem;
+  color: var(--muted);
+  line-height: 1.7;
+  margin: 0;
+}
+
+.prestige-link {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--accent);
+  text-decoration: none;
+  margin-top: 0.85rem;
+  display: inline-block;
+}
+
+/* Prestige – CTA band */
+.prestige-cta-band {
+  background: linear-gradient(135deg, rgba(30,64,175,0.35) 0%, rgba(26,140,255,0.18) 100%);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 2.5rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  margin: 3rem 0 2rem;
+}
+
+.prestige-cta-band h2 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--text);
+  margin: 0;
+  max-width: 480px;
+  line-height: 1.35;
+}
+
+/* Prestige – responsive */
+@media (max-width: 800px) {
+  .prestige-split,
+  .prestige-split-reverse {
+    grid-template-columns: 1fr;
+  }
+  .prestige-split-reverse .prestige-split-image {
+    order: unset;
+  }
+  .prestige-services-grid {
+    grid-template-columns: 1fr;
+  }
+  .prestige-cta-band {
+    flex-direction: column;
+    text-align: center;
+  }
+  .prestige-highlights {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* PRESTIGE — habillage luxe (scopé à .service-prestige-page uniquement) */
+
+.service-prestige-page .hero-title {
+  font-size: clamp(1.8rem, 4.6vw, 3.2rem);
+  font-weight: 700;
+}
+
+/* Hairline de transition héro -> contenu */
+.service-prestige-page .prestige-stats {
+  position: relative;
+  border-top: none;
+}
+
+.service-prestige-page .prestige-stats::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--accent2), var(--accent), transparent);
+  opacity: 0.55;
+}
+
+/* Badges numérotés (remplacent les icônes emoji) */
+.service-prestige-page .prestige-service-icon.is-numeral {
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: var(--accent);
+}
+
+/* Citation plus présente */
+.service-prestige-page .prestige-quote {
+  font-size: clamp(1.05rem, 2vw, 1.35rem);
+  line-height: 1.55;
+}
+
+/* Tags de qualifications (réutilise .expertise-tags, alignés à gauche ici) */
+.service-prestige-page .prestige-credential-tags {
+  justify-content: flex-start;
+  margin-top: 1.25rem;
+}
+
+/* Placeholders image premium */
+.service-prestige-page .prestige-img-placeholder {
+  background:
+    linear-gradient(150deg, rgba(30,64,175,0.22), rgba(255,107,95,0.10) 55%, rgba(3,14,30,0.55)),
+    repeating-linear-gradient(135deg, rgba(186,213,255,0.08) 0 12px, rgba(8,18,35,0.08) 12px 24px);
+  position: relative;
+}
+
+.service-prestige-page .prestige-img-placeholder-label {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 0.85rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #dbe7ff;
+  background: rgba(5,13,26,0.55);
+  border: 1px solid rgba(152,195,255,0.35);
+  padding: 8px 16px;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+
+.service-prestige-page .prestige-img-placeholder-avant-apres .prestige-img-placeholder-label {
+  border-color: rgba(255,107,95,0.4);
+}
+
+/* Bouton CTA dédié (remplace le style inline) */
+.service-prestige-page .btn-prestige-cta {
+  background: var(--accent2);
+  color: #fff;
+  border: none;
+  border-radius: 18px;
+  padding: 12px 24px;
+  font-weight: 700;
+  box-shadow: 0 8px 24px rgba(255,107,95,0.25);
+  white-space: nowrap;
+  transition: transform var(--transition), box-shadow var(--transition), filter var(--transition);
+}
+
+.service-prestige-page .btn-prestige-cta:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 14px 32px rgba(255,107,95,0.32);
+  filter: brightness(1.04);
+}
+
+.service-prestige-page .btn-prestige-cta:focus-visible {
+  outline: 3px solid rgba(255,107,95,0.3);
+  outline-offset: 3px;
+}
+
+/* Barre CTA collante (mobile uniquement) */
+.service-prestige-page .prestige-sticky-cta {
+  display: none;
+}
+
+@media (max-width: 640px) {
+  .service-prestige-page .prestige-sticky-cta {
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 50;
+    padding: 10px 16px calc(10px + env(safe-area-inset-bottom));
+    background: rgba(6,18,37,0.92);
+    backdrop-filter: blur(8px);
+    border-top: 1px solid var(--border);
+    transform: translateY(100%);
+    opacity: 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    pointer-events: none;
+  }
+
+  .service-prestige-page .prestige-sticky-cta.is-visible {
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .service-prestige-page .prestige-sticky-cta .btn-prestige-cta {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .service-prestige-page .prestige-sticky-cta {
+    transition: none;
+  }
 }
