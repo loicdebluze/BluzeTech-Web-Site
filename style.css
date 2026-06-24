@@ -634,8 +634,17 @@ a:hover{text-decoration:underline}
 
 
 .service-icon {
-  font-size: 2.2rem;
+  width: 38px;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(26,140,255,0.12);
+  border-radius: 8px;
   margin-bottom: 12px;
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: var(--accent);
 }
 
 
