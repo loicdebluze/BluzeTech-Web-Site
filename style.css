@@ -579,7 +579,7 @@ a:hover{text-decoration:underline}
 
 /* Responsive */
 @media (max-width: 800px) {
-  .founder-grid,
+  .about-page .founder-grid,
   .values-grid {
     grid-template-columns: 1fr;
   }
