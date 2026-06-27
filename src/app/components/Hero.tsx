@@ -25,20 +25,25 @@ export function Hero() {
         flexDirection: "column",
         overflow: "hidden",
       }}>
-        <img
-          src="/images/hero-bg.jpg"
-          alt=""
-          style={{
-            position: "absolute",
-            inset: 0,
-            width: "100%",
-            height: "100%",
-            objectFit: "cover",
-            objectPosition: "center 42%",
-            filter: "contrast(1.05)",
-            zIndex: 0,
-          }}
-        />
+        <picture style={{ position: "absolute", inset: 0, width: "100%", height: "100%" }}>
+          <source srcSet="/images/hero-bg.webp" type="image/webp" />
+          <img
+            src="/images/hero-bg.jpg"
+            alt=""
+            fetchPriority="high"
+            loading="eager"
+            style={{
+              position: "absolute",
+              inset: 0,
+              width: "100%",
+              height: "100%",
+              objectFit: "cover",
+              objectPosition: "center 42%",
+              filter: "contrast(1.05)",
+              zIndex: 0,
+            }}
+          />
+        </picture>
 
         <div style={{
           position: "absolute",
