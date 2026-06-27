@@ -23,3 +23,14 @@ function copyDir(from, to) {
 
 copyDir(src, dest);
 console.log('Pages statiques copiées dans docs/');
+
+const cnameRoot = path.join(__dirname, '..', 'CNAME');
+const cnameDest = path.join(__dirname, '..', 'docs', 'CNAME');
+if (fs.existsSync(cnameRoot)) {
+  fs.copyFileSync(cnameRoot, cnameDest);
+  console.log('CNAME copié dans docs/');
+}
+
+const nojekyll = path.join(__dirname, '..', 'docs', '.nojekyll');
+fs.writeFileSync(nojekyll, '');
+console.log('.nojekyll créé dans docs/');
