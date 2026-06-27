@@ -45,8 +45,8 @@ export function ServiceSection({
   const opacity = useTransform(scrollYProgress, [0, 0.3, 0.7, 1], [0, 1, 1, 0]);
 
   return (
-    <div id={id} ref={ref} className="min-h-screen flex items-center py-20 px-6 bg-[#061225]" style={{ overflow: 'hidden' }}>
-      <div className="max-w-7xl mx-auto w-full">
+    <div id={id} ref={ref} className="min-h-screen flex items-center py-20 px-6 bg-[#061225]">
+      <div className="max-w-7xl mx-auto w-full" style={{ overflow: 'hidden' }}>
         <div className={`grid md:grid-cols-2 gap-12 items-center ${reverse ? "md:grid-flow-dense" : ""}`}>
           <motion.div
             style={{ x: imageX, opacity }}
