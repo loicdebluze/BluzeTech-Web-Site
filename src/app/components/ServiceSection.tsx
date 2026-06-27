@@ -1,5 +1,4 @@
-import { motion, useScroll, useTransform } from "motion/react";
-import { useRef } from "react";
+import { motion } from "motion/react";
 
 interface ServiceSectionProps {
   id?: string;
@@ -26,30 +25,17 @@ export function ServiceSection({
   imageFilter = "none",
   learnMoreUrl = "services.html",
 }: ServiceSectionProps) {
-  const ref = useRef<HTMLDivElement>(null);
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ["start end", "end start"],
-  });
-
-  const imageX = useTransform(
-    scrollYProgress,
-    [0, 0.5, 1],
-    reverse ? [15, 0, -15] : [-15, 0, 15]
-  );
-  const textX = useTransform(
-    scrollYProgress,
-    [0, 0.5, 1],
-    reverse ? [-15, 0, 15] : [15, 0, -15]
-  );
-  const opacity = useTransform(scrollYProgress, [0, 0.3, 0.7, 1], [0, 1, 1, 0]);
+  const slide = 20;
 
   return (
-    <div id={id} ref={ref} className="min-h-screen flex items-center py-20 px-6 bg-[#061225]">
+    <div id={id} className="min-h-screen flex items-center py-20 px-6 bg-[#061225]">
       <div className="max-w-7xl mx-auto w-full">
         <div className={`grid md:grid-cols-2 gap-12 items-center ${reverse ? "md:grid-flow-dense" : ""}`}>
           <motion.div
-            style={{ x: imageX, opacity }}
+            initial={{ opacity: 0, x: reverse ? slide : -slide }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+            viewport={{ once: true, amount: 0.2 }}
             className={`relative ${reverse ? "md:col-start-2" : ""}`}
           >
             <div className="relative aspect-[4/3] rounded-lg overflow-hidden shadow-2xl">
@@ -59,7 +45,10 @@ export function ServiceSection({
           </motion.div>
 
           <motion.div
-            style={{ x: textX, opacity }}
+            initial={{ opacity: 0, x: reverse ? -slide : slide }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+            viewport={{ once: true, amount: 0.2 }}
             className={reverse ? "md:col-start-1 md:row-start-1" : ""}
           >
             <motion.h2 className="text-4xl md:text-6xl mb-6 text-[#f8fafc]">
