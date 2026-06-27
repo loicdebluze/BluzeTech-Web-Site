@@ -1901,12 +1901,16 @@ a:hover{text-decoration:underline}
 }
 
 /* Barre CTA collante (mobile uniquement) */
-.service-prestige-page .prestige-sticky-cta {
+.service-prestige-page .prestige-sticky-cta,
+.service-velo-page .prestige-sticky-cta,
+.service-proto-page .prestige-sticky-cta {
   display: none;
 }
 
 @media (max-width: 640px) {
-  .service-prestige-page .prestige-sticky-cta {
+  .service-prestige-page .prestige-sticky-cta,
+  .service-velo-page .prestige-sticky-cta,
+  .service-proto-page .prestige-sticky-cta {
     display: flex;
     justify-content: center;
     position: fixed;
@@ -1924,20 +1928,26 @@ a:hover{text-decoration:underline}
     pointer-events: none;
   }
 
-  .service-prestige-page .prestige-sticky-cta.is-visible {
+  .service-prestige-page .prestige-sticky-cta.is-visible,
+  .service-velo-page .prestige-sticky-cta.is-visible,
+  .service-proto-page .prestige-sticky-cta.is-visible {
     transform: translateY(0);
     opacity: 1;
     pointer-events: auto;
   }
 
-  .service-prestige-page .prestige-sticky-cta .btn-prestige-cta {
+  .service-prestige-page .prestige-sticky-cta .btn-prestige-cta,
+  .service-velo-page .prestige-sticky-cta .btn-prestige-cta,
+  .service-proto-page .prestige-sticky-cta .btn-prestige-cta {
     width: 100%;
     text-align: center;
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .service-prestige-page .prestige-sticky-cta {
+  .service-prestige-page .prestige-sticky-cta,
+  .service-velo-page .prestige-sticky-cta,
+  .service-proto-page .prestige-sticky-cta {
     transition: none;
   }
 }
