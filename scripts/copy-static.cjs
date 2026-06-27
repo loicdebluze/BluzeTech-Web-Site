@@ -1,0 +1,25 @@
+const fs = require('fs');
+const path = require('path');
+
+const src = path.join(__dirname, '..', 'BluzeTech-Web-Site');
+const dest = path.join(__dirname, '..', 'docs');
+const exclude = new Set(['index.html', 'Archives', 'CSS.txt', '.vscode']);
+const excludeExt = new Set(['.mp4', '.webm']);
+
+function copyDir(from, to) {
+  if (!fs.existsSync(to)) fs.mkdirSync(to, { recursive: true });
+  for (const item of fs.readdirSync(from)) {
+    if (exclude.has(item)) continue;
+    if (excludeExt.has(path.extname(item).toLowerCase())) continue;
+    const srcPath = path.join(from, item);
+    const destPath = path.join(to, item);
+    if (fs.statSync(srcPath).isDirectory()) {
+      copyDir(srcPath, destPath);
+    } else {
+      fs.copyFileSync(srcPath, destPath);
+    }
+  }
+}
+
+copyDir(src, dest);
+console.log('Pages statiques copiées dans docs/');
