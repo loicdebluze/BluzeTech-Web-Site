@@ -42,7 +42,11 @@ function staticSiteServer() {
           return next()
         }
         try {
-          let filePath = path.resolve(__dirname, 'BluzeTech-Web-Site', url.slice(1))
+          const inPrestige = url.startsWith('/prestige-vehicules-react/')
+          const baseDir = inPrestige ? __dirname : path.resolve(__dirname, 'BluzeTech-Web-Site')
+          let filePath = inPrestige
+            ? path.resolve(__dirname, url.slice(1))
+            : path.resolve(baseDir, url.slice(1))
           if (fs.existsSync(filePath) && fs.statSync(filePath).isDirectory()) {
             filePath = path.join(filePath, 'index.html')
           }

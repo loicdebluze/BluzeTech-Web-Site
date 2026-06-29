@@ -24,6 +24,24 @@ function copyDir(from, to) {
 copyDir(src, dest);
 console.log('Pages statiques copiées dans docs/');
 
+const prestigeSrc = path.join(__dirname, '..', 'prestige-vehicules-react');
+const prestigeDest = path.join(__dirname, '..', 'docs', 'prestige-vehicules-react');
+const excludePrestige = new Set(['node_modules']);
+function copyPrestige(from, to) {
+  if (!fs.existsSync(to)) fs.mkdirSync(to, { recursive: true });
+  for (const item of fs.readdirSync(from)) {
+    if (excludePrestige.has(item)) continue;
+    const s = path.join(from, item);
+    const d = path.join(to, item);
+    if (fs.statSync(s).isDirectory()) copyPrestige(s, d);
+    else fs.copyFileSync(s, d);
+  }
+}
+if (fs.existsSync(prestigeSrc)) {
+  copyPrestige(prestigeSrc, prestigeDest);
+  console.log('App prestige copiée dans docs/prestige-vehicules-react/');
+}
+
 const cnameRoot = path.join(__dirname, '..', 'CNAME');
 const cnameDest = path.join(__dirname, '..', 'docs', 'CNAME');
 if (fs.existsSync(cnameRoot)) {
