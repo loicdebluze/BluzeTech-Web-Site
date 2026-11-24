@@ -1,18 +1,24 @@
 import { motion } from "motion/react";
 
-const projects = [
+type Project = {
+  images: string[];
+  title: string;
+  description: string;
+};
+
+const projects: Project[] = [
   {
-    image: "/images/Avant-Apres.png",
-    title: "Réparation cadre de vélo de montagne",
-    description: "Réparation structurelle d'un cadre endommagé après impact.",
+    images: ["/images/Projet-6.jpg", "/images/Projet-6b.jpg"],
+    title: "Réparation base Argon 18",
+    description: "Réparation en fibre de carbone et peinture assortie à la teinte d'origine.",
   },
   {
-    image: "/images/projet-3.jpg",
+    images: ["/images/projet-3.jpg"],
     title: "Réparation cadre de vélo de route",
     description: "Réparation de fissure et remplacement de matériaux.",
   },
   {
-    image: "/images/projet-4c.png",
+    images: ["/images/projet-4c.png"],
     title: "Réparation de fatbike",
     description: "Réparation d'une fissure sur le bras oscillant d'un fatbike double suspension.",
   },
@@ -54,12 +60,15 @@ export function ProjectsSection() {
               onMouseEnter={e => { (e.currentTarget as HTMLAnchorElement).style.borderColor = "#1e40af"; (e.currentTarget as HTMLAnchorElement).style.transform = "translateY(-4px)"; }}
               onMouseLeave={e => { (e.currentTarget as HTMLAnchorElement).style.borderColor = "#12304b"; (e.currentTarget as HTMLAnchorElement).style.transform = ""; }}
             >
-              <div style={{ aspectRatio: "4/3", overflow: "hidden" }}>
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
-                />
+              <div style={{ aspectRatio: "4/3", overflow: "hidden", display: "flex", gap: project.images.length > 1 ? "2px" : 0, background: "#12304b" }}>
+                {project.images.map((src, i) => (
+                  <img
+                    key={src}
+                    src={src}
+                    alt={project.images.length > 1 ? `${project.title} - photo ${i + 1}` : project.title}
+                    style={{ flex: 1, minWidth: 0, width: "100%", height: "100%", objectFit: "cover", display: "block" }}
+                  />
+                ))}
               </div>
               <div style={{ padding: "1.25rem 1.5rem" }}>
                 <h3 style={{ color: "#f8fafc", fontSize: "1rem", fontWeight: 600, marginBottom: "0.5rem" }}>
